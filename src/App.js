@@ -27,7 +27,7 @@ function App() {
 
   const getData = async (latitude, longitude) => {
     const API_KEY = "1f38c79d918a202fc06dbd3406c2ba09";
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
     const data = await response.json();
     console.log(data)
     setWeather(data)
