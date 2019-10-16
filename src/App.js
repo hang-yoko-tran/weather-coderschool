@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import { css } from '@emotion/core';
+import { PacmanLoader } from 'react-spinners';
+
+const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+    color: white;
+`;
 
 function App() {
   const [weather, setWeather] = useState(null)
@@ -12,7 +21,8 @@ function App() {
   }
 
   useEffect(() => {
-    getLocation()
+    setTimeout(getLocation,5000)
+    
   }, [])
 
   const getData = async (latitude, longitude) => {
@@ -26,7 +36,18 @@ function App() {
   // getLocation()
   console.log(weather)
   return (
-    isLoading ? <h1>I'm loading...</h1> :
+    isLoading ? (
+      <div className="d-flex justify-content-center align-items-center" style={{height: "100vh"}}>
+      <PacmanLoader
+        css={override}
+        sizeUnit={"px"}
+        size={30}
+        color={'white'}
+        loading={isLoading}
+      />
+      </div>
+ 
+    ) :
       (<div className="container-fluid text-white my-auto">
         <div className="container mx-auto my-4 py-4">
           <div className="row justify-content-center text-center">

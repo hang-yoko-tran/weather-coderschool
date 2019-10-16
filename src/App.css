@@ -21,7 +21,21 @@
   color: #09d3ac;
 }
 
+* {
+  font-family: Montserrat;
+}
+
 body {
   height: 100%;
-  background-color: black;
+  background-color: #100C3C;
+}
+
+/* .text-success {
+  color: white;
+} */
+
+.loading-icon {
+  /* display: flex;
+  align-self: center; */
+  background-color: white;
 }
